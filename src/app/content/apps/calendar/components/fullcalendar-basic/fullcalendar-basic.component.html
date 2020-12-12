@@ -1,0 +1,15 @@
+<prx-page-header pre="Scheduler" title="Full Calendar" sub="Seamlessly integration with the Angular"></prx-page-header>
+
+<div class="container-fluid">
+  <prx-card title="Basic - List View">
+    <prx-card-body>
+      <ng-container *ngIf="calendarOptions.events; else loading">
+        <full-calendar [options]="calendarOptions" themeSystem="proxima"></full-calendar>
+      </ng-container>
+
+      <ng-template #loading>
+        <prx-loader [template]="'table'" [isLoading]="isLoading" [count]="2"></prx-loader>
+      </ng-template>
+    </prx-card-body>
+  </prx-card>
+</div>
